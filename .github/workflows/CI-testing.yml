@@ -4,9 +4,9 @@ name: CI and Testing
 #Trigger to run the workflow
 on:
   push:
-    branches: [master, main, *]
+    branches: master
   pull_request:
-    branches: [master, main, *]
+    branches: master
 
 #Job to Run
 jobs:
@@ -17,7 +17,6 @@ jobs:
 
     #steps we want to run on the runner machine
     steps:
-    
       #step-1: checkout the code from the repo (download the repo on the runner)
       - uses: actions/checkout@v4
 
@@ -34,4 +33,3 @@ jobs:
       #step-4: Run the unit and integration tests
       - name: Run Tests
         run: npm test
-
